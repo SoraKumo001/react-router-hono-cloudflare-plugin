@@ -1,0 +1,14 @@
+workers_dev = true
+name = "react-router-hono-cloudflare-plugin"
+compatibility_date = "2024-12-30"
+compatibility_flags = ["nodejs_compat"]
+main = "./build/server/index.js"
+assets = { directory = "./build/client/" }
+
+[vars]
+TEST="Cloudflare Test"
+REACT_ROUTER_PUBLIC_TEST1 = "React Router Public Test1"
+REACT_ROUTER_PUBLIC_TEST2 = "React Router Public Test2"
+
+[observability]
+enabled = true
