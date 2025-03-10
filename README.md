@@ -66,7 +66,7 @@ app.use(contextStorage());
 
 app.use(async (c) => {
   const build = await import(
-    import.meta.hot
+    import.meta.env
       ? "virtual:react-router/server-build"
       : "../build/server/index.js"
   ).catch();
