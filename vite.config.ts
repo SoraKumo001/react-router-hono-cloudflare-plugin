@@ -4,7 +4,7 @@ import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { cloudflare } from "@cloudflare/vite-plugin";
 
-export default defineConfig(({ mode }) => ({
+export default defineConfig(() => ({
   resolve: {
     alias: [
       {
@@ -13,10 +13,5 @@ export default defineConfig(({ mode }) => ({
       },
     ],
   },
-  plugins: [
-    mode === "development" && cloudflare(),
-    tailwindcss(),
-    reactRouter(),
-    tsconfigPaths(),
-  ],
+  plugins: [cloudflare(), tailwindcss(), reactRouter(), tsconfigPaths()],
 }));
