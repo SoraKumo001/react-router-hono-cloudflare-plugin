@@ -7,9 +7,9 @@ app.use(contextStorage());
 
 app.use(async (c) => {
   // @ts-ignore
-  const build = await import("../build/server/index.js");
+  const build = await import("virtual:react-router/server-build");
   // @ts-ignore
-  const handler = createRequestHandler(build, import.meta.env?.MODE);
+  const handler = createRequestHandler(build, import.meta.env.MODE);
   return handler(c.req.raw);
 });
 

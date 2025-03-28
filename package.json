@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@react-router/fs-routes": "^7.4.0",
-    "hono": "^4.7.4",
+    "hono": "^4.7.5",
     "isbot": "^5.1.25",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -19,21 +19,21 @@
     "remix-provider": "^1.0.3"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "0.1.13",
-    "@cloudflare/workers-types": "^4.20250319.0",
+    "@cloudflare/vite-plugin": "0.1.18",
+    "@cloudflare/workers-types": "^4.20250327.0",
     "@react-router/dev": "7.4.0",
-    "@tailwindcss/vite": "4.0.14",
-    "@types/node": "^22.13.10",
+    "@tailwindcss/vite": "4.0.17",
+    "@types/node": "^22.13.14",
     "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.4",
     "autoprefixer": "^10.4.21",
     "next-exec": "^1.0.0",
     "postcss": "^8.5.3",
-    "tailwindcss": "^4.0.14",
+    "tailwindcss": "^4.0.17",
     "typescript": "^5.8.2",
-    "vite": "^6.2.2",
+    "vite": "^6.2.3",
     "vite-tsconfig-paths": "^5.1.4",
-    "wrangler": "^4.2.0"
+    "wrangler": "^4.5.1"
   },
   "version": "1.0.0",
   "main": "index.js",
