@@ -57,20 +57,22 @@ export default flatRoutes() satisfies RouteConfig;
 ## workers/app.ts
 
 ```ts
-import { reactRouter } from "@react-router/dev/vite";
-import tailwindcss from "@tailwindcss/vite";
-import { defineConfig } from "vite";
-import tsconfigPaths from "vite-tsconfig-paths";
-import { cloudflare } from "@cloudflare/vite-plugin";
+import { Hono } from "hono";
+import { contextStorage } from "hono/context-storage";
+import { createRequestHandler } from "react-router";
 
-export default defineConfig(() => ({
-  plugins: [
-    cloudflare({ viteEnvironment: { name: "ssr" } }),
-    tailwindcss(),
-    reactRouter(),
-    tsconfigPaths(),
-  ],
-}));
+const app = new Hono();
+app.use(contextStorage());
+
+app.use(async (c) => {
+  // @ts-ignore
+  const build = await import("virtual:react-router/server-build");
+  // @ts-ignore
+  const handler = createRequestHandler(build, import.meta.env.MODE);
+  return handler(c.req.raw);
+});
+
+export default app;
 ```
 
 ## app/routes/\_index.tsx
